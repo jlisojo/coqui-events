@@ -24,8 +24,9 @@ class Simple_Events_Blocks {
         wp_register_script(
             'simple-events-block-grid',
             SIMPLE_EVENTS_PLUGIN_URL . 'assets/js/block-grid.js',
-            array('wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n'),
-            SIMPLE_EVENTS_VERSION
+            array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n'),
+            SIMPLE_EVENTS_VERSION,
+            true
         );
 
         wp_register_style(

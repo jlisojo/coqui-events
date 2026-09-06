@@ -10,8 +10,29 @@ if (!defined('ABSPATH')) {
 class Simple_Events_Assets {
 
     public function __construct() {
+        add_action('init', array($this, 'register_frontend'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin'));
+    }
+
+    /**
+     * Register frontend handles so blocks can reference them by name.
+     */
+    public function register_frontend() {
+        wp_register_style(
+            'simple-events-cpt',
+            SIMPLE_EVENTS_PLUGIN_URL . 'assets/css/frontend.css',
+            array(),
+            SIMPLE_EVENTS_VERSION
+        );
+
+        wp_register_script(
+            'simple-events-cpt',
+            SIMPLE_EVENTS_PLUGIN_URL . 'assets/js/frontend.js',
+            array(),
+            SIMPLE_EVENTS_VERSION,
+            true
+        );
     }
 
     /**
@@ -38,20 +59,8 @@ class Simple_Events_Assets {
      * Public enqueue used by the shortcode when it renders outside the main content check.
      */
     public function enqueue() {
-        wp_enqueue_style(
-            'simple-events-cpt',
-            SIMPLE_EVENTS_PLUGIN_URL . 'assets/css/frontend.css',
-            array(),
-            SIMPLE_EVENTS_VERSION
-        );
-
-        wp_enqueue_script(
-            'simple-events-cpt',
-            SIMPLE_EVENTS_PLUGIN_URL . 'assets/js/frontend.js',
-            array(),
-            SIMPLE_EVENTS_VERSION,
-            true
-        );
+        wp_enqueue_style('simple-events-cpt');
+        wp_enqueue_script('simple-events-cpt');
     }
 
     /**
