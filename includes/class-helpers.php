@@ -253,12 +253,12 @@ class Simple_Events_Helpers {
      * @param array $args    Display args.
      */
     public static function render_card($post_id, $args = array()) {
-        $args = wp_parse_args($args, array(
+        $se_args = wp_parse_args($args, array(
             'show_register' => true,
             'is_past'       => false,
         ));
 
-        $event = self::get_event($post_id);
+        $se_event = self::get_event($post_id);
         $template = SIMPLE_EVENTS_PLUGIN_DIR . 'templates/parts/event-card.php';
 
         if (file_exists($template)) {

@@ -11,12 +11,12 @@ if (!defined('ABSPATH')) {
 }
 
 $post_id = get_the_ID();
-$event   = Simple_Events_Helpers::get_event($post_id);
+$se_event   = Simple_Events_Helpers::get_event($post_id);
 
-$date_display = Simple_Events_Helpers::format_date_range($event['date'], $event['end_date']);
-$time_display = Simple_Events_Helpers::format_time_range($event['time'], $event['end_time']);
-$cta_label    = $event['is_free'] ? __('Register Now', 'simple-events-cpt') : __('Register / Buy Tickets', 'simple-events-cpt');
-$map_query    = trim($event['address'] . ' ' . $event['city'] . ' ' . $event['state'] . ' ' . $event['zip']);
+$se_date_display = Simple_Events_Helpers::format_date_range($se_event['date'], $se_event['end_date']);
+$se_time_display = Simple_Events_Helpers::format_time_range($se_event['time'], $se_event['end_time']);
+$se_cta_label    = $se_event['is_free'] ? __('Register Now', 'simple-events-cpt') : __('Register / Buy Tickets', 'simple-events-cpt');
+$se_map_query    = trim($se_event['address'] . ' ' . $se_event['city'] . ' ' . $se_event['state'] . ' ' . $se_event['zip']);
 
 get_header();
 ?>
@@ -27,9 +27,9 @@ get_header();
             <article class="se-single__article">
                 <header class="se-single__header">
                     <h1 class="se-single__title" itemprop="name"><?php the_title(); ?></h1>
-                    <?php if ($event['registration_link']) : ?>
-                        <a class="se-button se-button--primary se-single__cta-mobile" href="<?php echo esc_url($event['registration_link']); ?>" target="_blank" rel="noopener noreferrer">
-                            <?php echo esc_html($cta_label); ?>
+                    <?php if ($se_event['registration_link']) : ?>
+                        <a class="se-button se-button--primary se-single__cta-mobile" href="<?php echo esc_url($se_event['registration_link']); ?>" target="_blank" rel="noopener noreferrer">
+                            <?php echo esc_html($se_cta_label); ?>
                         </a>
                     <?php endif; ?>
                 </header>
@@ -38,10 +38,11 @@ get_header();
                     <div class="se-single__main">
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="se-single__image">
-                                <?php if ($event['is_free']) : ?>
+                                <?php if ($se_event['is_free']) : ?>
                                     <span class="se-badge se-badge--free"><?php esc_html_e('Free Event', 'simple-events-cpt'); ?></span>
-                                <?php elseif ($event['price']) : ?>
-                                    <span class="se-badge se-badge--price"><?php echo esc_html(sprintf(__('From %s', 'simple-events-cpt'), Simple_Events_Helpers::format_price($event['price']))); ?></span>
+                                <?php elseif ($se_event['price']) : ?>
+                                    <?php /* translators: %s: event price, including currency symbol. */ ?>
+                                    <span class="se-badge se-badge--price"><?php echo esc_html(sprintf(__('From %s', 'simple-events-cpt'), Simple_Events_Helpers::format_price($se_event['price']))); ?></span>
                                 <?php endif; ?>
                                 <?php the_post_thumbnail('large'); ?>
                             </div>
@@ -53,105 +54,105 @@ get_header();
                     </div>
 
                     <aside class="se-single__sidebar">
-                        <?php if ($event['registration_link']) : ?>
+                        <?php if ($se_event['registration_link']) : ?>
                             <div class="se-panel se-panel--cta">
-                                <a class="se-button se-button--primary se-button--block" href="<?php echo esc_url($event['registration_link']); ?>" target="_blank" rel="noopener noreferrer">
-                                    <?php echo esc_html($cta_label); ?>
+                                <a class="se-button se-button--primary se-button--block" href="<?php echo esc_url($se_event['registration_link']); ?>" target="_blank" rel="noopener noreferrer">
+                                    <?php echo esc_html($se_cta_label); ?>
                                 </a>
                             </div>
                         <?php endif; ?>
 
                         <div class="se-panel">
                             <h2><?php esc_html_e('Event Details', 'simple-events-cpt'); ?></h2>
-                            <?php if ($date_display) : ?>
+                            <?php if ($se_date_display) : ?>
                                 <div class="se-panel__row">
                                     <strong><?php esc_html_e('Date', 'simple-events-cpt'); ?></strong>
-                                    <span><?php echo esc_html($date_display); ?></span>
+                                    <span><?php echo esc_html($se_date_display); ?></span>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($time_display) : ?>
+                            <?php if ($se_time_display) : ?>
                                 <div class="se-panel__row">
                                     <strong><?php esc_html_e('Time', 'simple-events-cpt'); ?></strong>
-                                    <span><?php echo esc_html($time_display); ?></span>
+                                    <span><?php echo esc_html($se_time_display); ?></span>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($event['age_range']) : ?>
+                            <?php if ($se_event['age_range']) : ?>
                                 <div class="se-panel__row">
                                     <strong><?php esc_html_e('Ages', 'simple-events-cpt'); ?></strong>
-                                    <span><?php echo esc_html($event['age_range']); ?></span>
+                                    <span><?php echo esc_html($se_event['age_range']); ?></span>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($event['capacity']) : ?>
+                            <?php if ($se_event['capacity']) : ?>
                                 <div class="se-panel__row">
                                     <strong><?php esc_html_e('Capacity', 'simple-events-cpt'); ?></strong>
-                                    <span><?php echo esc_html($event['capacity']); ?></span>
+                                    <span><?php echo esc_html($se_event['capacity']); ?></span>
                                 </div>
                             <?php endif; ?>
                         </div>
 
-                        <?php if ($event['location']) : ?>
+                        <?php if ($se_event['location']) : ?>
                             <div class="se-panel">
                                 <h2><?php esc_html_e('Location', 'simple-events-cpt'); ?></h2>
-                                <p class="se-panel__venue"><strong><?php echo esc_html($event['location']); ?></strong></p>
-                                <?php if ($event['address']) : ?>
+                                <p class="se-panel__venue"><strong><?php echo esc_html($se_event['location']); ?></strong></p>
+                                <?php if ($se_event['address']) : ?>
                                     <address>
-                                        <?php echo esc_html($event['address']); ?><br>
-                                        <?php if ($event['city'] || $event['state'] || $event['zip']) : ?>
-                                            <?php echo esc_html(trim($event['city'] . ', ' . $event['state'] . ' ' . $event['zip'], ', ')); ?>
+                                        <?php echo esc_html($se_event['address']); ?><br>
+                                        <?php if ($se_event['city'] || $se_event['state'] || $se_event['zip']) : ?>
+                                            <?php echo esc_html(trim($se_event['city'] . ', ' . $se_event['state'] . ' ' . $se_event['zip'], ', ')); ?>
                                         <?php endif; ?>
                                     </address>
                                 <?php endif; ?>
-                                <?php if ($map_query) : ?>
-                                    <a class="se-map-link" href="<?php echo esc_url('https://maps.google.com/?q=' . rawurlencode($map_query)); ?>" target="_blank" rel="noopener noreferrer">
+                                <?php if ($se_map_query) : ?>
+                                    <a class="se-map-link" href="<?php echo esc_url('https://maps.google.com/?q=' . rawurlencode($se_map_query)); ?>" target="_blank" rel="noopener noreferrer">
                                         <?php esc_html_e('View on Map', 'simple-events-cpt'); ?>
                                     </a>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
 
-                        <?php if (!$event['is_free'] && ($event['price'] || $event['price_child'] || $event['price_adult'])) : ?>
+                        <?php if (!$se_event['is_free'] && ($se_event['price'] || $se_event['price_child'] || $se_event['price_adult'])) : ?>
                             <div class="se-panel">
                                 <h2><?php esc_html_e('Pricing', 'simple-events-cpt'); ?></h2>
-                                <?php if ($event['price']) : ?>
+                                <?php if ($se_event['price']) : ?>
                                     <div class="se-panel__row">
                                         <strong><?php esc_html_e('General', 'simple-events-cpt'); ?></strong>
-                                        <span><?php echo esc_html(Simple_Events_Helpers::format_price($event['price'])); ?></span>
+                                        <span><?php echo esc_html(Simple_Events_Helpers::format_price($se_event['price'])); ?></span>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($event['price_child']) : ?>
+                                <?php if ($se_event['price_child']) : ?>
                                     <div class="se-panel__row">
                                         <strong><?php esc_html_e('Child', 'simple-events-cpt'); ?></strong>
-                                        <span><?php echo esc_html(Simple_Events_Helpers::format_price($event['price_child'])); ?></span>
+                                        <span><?php echo esc_html(Simple_Events_Helpers::format_price($se_event['price_child'])); ?></span>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($event['price_adult']) : ?>
+                                <?php if ($se_event['price_adult']) : ?>
                                     <div class="se-panel__row">
                                         <strong><?php esc_html_e('Adult', 'simple-events-cpt'); ?></strong>
-                                        <span><?php echo esc_html(Simple_Events_Helpers::format_price($event['price_adult'])); ?></span>
+                                        <span><?php echo esc_html(Simple_Events_Helpers::format_price($se_event['price_adult'])); ?></span>
                                     </div>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
 
-                        <?php if ($event['phone'] || $event['email'] || $event['website']) : ?>
+                        <?php if ($se_event['phone'] || $se_event['email'] || $se_event['website']) : ?>
                             <div class="se-panel">
                                 <h2><?php esc_html_e('Contact', 'simple-events-cpt'); ?></h2>
-                                <?php if ($event['phone']) : ?>
+                                <?php if ($se_event['phone']) : ?>
                                     <div class="se-panel__row">
                                         <strong><?php esc_html_e('Phone', 'simple-events-cpt'); ?></strong>
-                                        <a href="<?php echo esc_url('tel:' . $event['phone']); ?>"><?php echo esc_html($event['phone']); ?></a>
+                                        <a href="<?php echo esc_url('tel:' . $se_event['phone']); ?>"><?php echo esc_html($se_event['phone']); ?></a>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($event['email']) : ?>
+                                <?php if ($se_event['email']) : ?>
                                     <div class="se-panel__row">
                                         <strong><?php esc_html_e('Email', 'simple-events-cpt'); ?></strong>
-                                        <a href="<?php echo esc_url('mailto:' . $event['email']); ?>"><?php echo esc_html($event['email']); ?></a>
+                                        <a href="<?php echo esc_url('mailto:' . $se_event['email']); ?>"><?php echo esc_html($se_event['email']); ?></a>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($event['website']) : ?>
+                                <?php if ($se_event['website']) : ?>
                                     <div class="se-panel__row">
                                         <strong><?php esc_html_e('Website', 'simple-events-cpt'); ?></strong>
-                                        <a href="<?php echo esc_url($event['website']); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Visit website', 'simple-events-cpt'); ?></a>
+                                        <a href="<?php echo esc_url($se_event['website']); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Visit website', 'simple-events-cpt'); ?></a>
                                     </div>
                                 <?php endif; ?>
                             </div>

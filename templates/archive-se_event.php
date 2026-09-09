@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$past_query = new WP_Query(Simple_Events_Helpers::past_query_args());
+$se_past_query = new WP_Query(Simple_Events_Helpers::past_query_args());
 
 get_header();
 ?>
@@ -45,7 +45,7 @@ get_header();
         ));
         ?>
 
-        <?php if ($past_query->have_posts()) : ?>
+        <?php if ($se_past_query->have_posts()) : ?>
             <section class="se-past">
                 <button class="se-past__toggle" type="button" aria-expanded="false" aria-controls="se-past-grid">
                     <h2><?php esc_html_e('Past Events', 'simple-events-cpt'); ?></h2>
@@ -53,8 +53,8 @@ get_header();
                 </button>
                 <div id="se-past-grid" class="se-grid se-past__grid" hidden>
                     <?php
-                    while ($past_query->have_posts()) :
-                        $past_query->the_post();
+                    while ($se_past_query->have_posts()) :
+                        $se_past_query->the_post();
                         Simple_Events_Helpers::render_card(get_the_ID(), array(
                             'is_past'       => true,
                             'show_register' => false,

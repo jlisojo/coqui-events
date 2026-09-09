@@ -38,8 +38,6 @@ require_once SIMPLE_EVENTS_PLUGIN_DIR . 'includes/class-blocks.php';
  * Bootstrap plugin classes.
  */
 function simple_events_init() {
-    load_plugin_textdomain('simple-events-cpt', false, dirname(plugin_basename(SIMPLE_EVENTS_FILE)) . '/languages');
-
     Simple_Events_Settings::instance();
     new Simple_Events_Post_Type();
     new Simple_Events_Meta_Boxes();
