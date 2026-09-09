@@ -14,24 +14,38 @@
       "password": "password"
     },
     {
-      "step": "installPlugin",
-      "pluginZipFile": {
+      "step": "unzip",
+      "zipFile": {
         "resource": "url",
         "url": "https://github.com/jlisojo/simple-events-cpt/archive/refs/heads/main.zip"
       },
-      "options": {
-        "activate": true
-      }
+      "extractToPath": "/wordpress/wp-content/plugins"
     },
     {
-      "step": "installPlugin",
-      "pluginZipFile": {
+      "step": "mv",
+      "fromPath": "/wordpress/wp-content/plugins/simple-events-cpt-main",
+      "toPath": "/wordpress/wp-content/plugins/simple-events-cpt"
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "simple-events-cpt/simple-events-cpt.php"
+    },
+    {
+      "step": "unzip",
+      "zipFile": {
         "resource": "url",
         "url": "https://github.com/jlisojo/simple-events-pro/archive/refs/heads/main.zip"
       },
-      "options": {
-        "activate": true
-      }
+      "extractToPath": "/wordpress/wp-content/plugins"
+    },
+    {
+      "step": "mv",
+      "fromPath": "/wordpress/wp-content/plugins/simple-events-pro-main",
+      "toPath": "/wordpress/wp-content/plugins/simple-events-pro"
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "simple-events-pro/simple-events-pro.php"
     }
   ]
 }
