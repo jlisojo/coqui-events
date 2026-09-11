@@ -1,8 +1,8 @@
-# Copyright (C) 2026 Simple Events CPT
-# This file is distributed under the same license as the Simple Events CPT package.
+# Copyright (C) 2026 Coqui Events
+# This file is distributed under the same license as the Coqui Events package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simple Events CPT 1.0.0\n"
+"Project-Id-Version: Coqui Events 1.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/jlisojo/simple-events-cpt/issues\n"
 "POT-Creation-Date: 2026-09-03T00:00:00+00:00\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: simple-events-cpt.php:0
-msgid "Simple Events CPT"
+#: coqui-events.php:0
+msgid "Coqui Events"
 msgstr ""
 
-#: simple-events-cpt.php:0
+#: coqui-events.php:0
 msgid "A lightweight events custom post type with date, location, and pricing fields, theme-overridable templates, Schema.org markup, and a shortcode."
 msgstr ""
 

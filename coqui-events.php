@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Simple Events CPT
+ * Plugin Name: Coqui Events
  * Description: A lightweight events custom post type with date, location, and pricing fields, theme-overridable templates, Schema.org markup, and a shortcode.
- * Version: 1.0.0
+ * Version: 1.0.2
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Josh
  * Author URI: https://github.com/jlisojo
- * Text Domain: simple-events-cpt
+ * Text Domain: coqui-events
  * Domain Path: /languages
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('SIMPLE_EVENTS_VERSION', '1.0.0');
+define('SIMPLE_EVENTS_VERSION', '1.0.2');
 define('SIMPLE_EVENTS_FILE', __FILE__);
 define('SIMPLE_EVENTS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SIMPLE_EVENTS_PLUGIN_URL', plugin_dir_url(__FILE__));

@@ -21,6 +21,7 @@ vendor/
 # Build artifacts
 *.log
 *.cache
+*.zip
 
 # Environment files
 .env

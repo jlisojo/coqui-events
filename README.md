@@ -1,10 +1,10 @@
-# Simple Events CPT
+# Coqui Events
 
 A lightweight WordPress plugin for publishing events. It registers an `se_event` custom post type with date, location, and pricing fields, theme-overridable templates, Schema.org markup, and a shortcode.
 
 Built as a generic, self-contained plugin suitable for any WordPress site. No page builder or third-party ticketing vendor required.
 
-**📦 Available on WordPress.org:** [WordPress Plugin Directory](https://wordpress.org/plugins/simple-events-cpt/)
+**📦 Available on WordPress.org:** [WordPress Plugin Directory](https://wordpress.org/plugins/coqui-events/)
 
 **🚀 Premium features:** [Simple Events Pro](https://github.com/jlisojo/simple-events-pro) (separate add-on with recurring events, calendar view, iCal export)
 
@@ -27,8 +27,8 @@ Built as a generic, self-contained plugin suitable for any WordPress site. No pa
 
 ## Installation
 
-1. Copy this folder to `wp-content/plugins/simple-events-cpt/`
-2. Activate **Simple Events CPT**
+1. Copy this folder to `wp-content/plugins/coqui-events/`
+2. Activate **Coqui Events**
 3. Visit **Settings → Permalinks** (or just activate; rewrite rules are flushed on activation)
 4. Add events under **Events** in wp-admin
 
@@ -46,7 +46,7 @@ Single events live at `/{slug}/{event-name}/`. The default slug is `events`.
 
 ### Gutenberg Block
 
-Add the **Event Grid** block in the WordPress Block Editor (`simple-events-cpt/event-grid`). You can configure grid title, number of events, toggle the "View All" button, and set custom button labels directly in the block sidebar inspector with a real-time preview.
+Add the **Event Grid** block in the WordPress Block Editor (`coqui-events/event-grid`). You can configure grid title, number of events, toggle the "View All" button, and set custom button labels directly in the block sidebar inspector with a real-time preview.
 
 ### Shortcode
 
@@ -84,7 +84,7 @@ The plugin template is used only when the theme does not provide one.
 ## Architecture
 
 ```
-simple-events-cpt.php          Bootstrap, constants, activation
+coqui-events.php          Bootstrap, constants, activation
 includes/
   class-helpers.php            Meta helpers, query args, formatting
   class-settings.php           Settings API

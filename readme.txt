@@ -1,11 +1,11 @@
-=== Simple Events CPT ===
+=== Coqui Events ===
 Contributors: jlisojo
 Donate link: https://github.com/jlisojo/simple-events-cpt
 Tags: events, calendar, custom-post-type, cpt, event-management
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ A lightweight WordPress events plugin with custom post types, recurring events v
 
 == Description ==
 
-Simple Events CPT is a flexible, self-contained events management plugin for WordPress. It registers an `se_event` custom post type with comprehensive event metadata, native archive templates, and a shortcode for event listings.
+Coqui Events is a flexible, self-contained events management plugin for WordPress. It registers an `se_event` custom post type with comprehensive event metadata, native archive templates, and a shortcode for event listings.
 
 **Features:**
 
@@ -37,7 +37,7 @@ Simple Events CPT is a flexible, self-contained events management plugin for Wor
 
 == Installation ==
 
-1. Upload the `simple-events-cpt` folder to your `/wp-content/plugins/` directory
+1. Upload the `coqui-events` folder to your `/wp-content/plugins/` directory
 2. Activate the plugin through the WordPress admin
 3. Visit **Settings → Permalinks** to flush rewrite rules (or just activate; rules are flushed automatically)
 4. Add events under **Events → Add New**
@@ -92,7 +92,7 @@ Or use the theme subdirectory:
 
 **Does this plugin create a page?**
 
-No. Simple Events CPT uses the native WordPress archive URL (`/events/` by default) and individual post URLs. No page is created.
+No. Coqui Events uses the native WordPress archive URL (`/events/` by default) and individual post URLs. No page is created.
 
 **Can I change the archive URL?**
 
@@ -124,7 +124,7 @@ Yes. Events are registered with REST support, so you can query them programmatic
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.2 =
 * Initial release
 * Events custom post type with categories and tags
 * Meta boxes for event details (date, time, location, pricing, contact)
@@ -138,7 +138,7 @@ Yes. Events are registered with REST support, so you can query them programmatic
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 1.0.2 =
 First release. No upgrades from previous versions.
 
 == Support ==
