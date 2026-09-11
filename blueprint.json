@@ -24,11 +24,11 @@
     {
       "step": "mv",
       "fromPath": "/wordpress/wp-content/plugins/simple-events-cpt-main",
-      "toPath": "/wordpress/wp-content/plugins/coqui-events"
+      "toPath": "/wordpress/wp-content/plugins/simple-events-cpt"
     },
     {
       "step": "activatePlugin",
-      "pluginPath": "coqui-events/coqui-events.php"
+      "pluginPath": "simple-events-cpt/coqui-events.php"
     },
     {
       "step": "unzip",
