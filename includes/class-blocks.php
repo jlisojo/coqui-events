@@ -40,7 +40,7 @@ class Simple_Events_Blocks {
             'api_version'     => 2,
             'editor_script'   => 'simple-events-block-grid',
             'editor_style'    => 'simple-events-block-grid-editor',
-            'style'           => 'coqui-events',
+            'style'           => 'simple-events-cpt',
             'attributes'      => array(
                 'count'       => array(
                     'type'    => 'number',
@@ -56,7 +56,7 @@ class Simple_Events_Blocks {
                 ),
                 'button_text' => array(
                     'type'    => 'string',
-                    'default' => __('View All Events', 'coqui-events'),
+                    'default' => __('View All Events', 'simple-events-cpt'),
                 ),
                 'button_url'  => array(
                     'type'    => 'string',
@@ -79,7 +79,7 @@ class Simple_Events_Blocks {
             'count'       => isset($attributes['count']) ? absint($attributes['count']) : 3,
             'title'       => isset($attributes['title']) ? sanitize_text_field($attributes['title']) : '',
             'show_button' => isset($attributes['show_button']) && $attributes['show_button'] ? 'true' : 'false',
-            'button_text' => isset($attributes['button_text']) ? sanitize_text_field($attributes['button_text']) : __('View All Events', 'coqui-events'),
+            'button_text' => isset($attributes['button_text']) ? sanitize_text_field($attributes['button_text']) : __('View All Events', 'simple-events-cpt'),
             'button_url'  => isset($attributes['button_url']) ? esc_url_raw($attributes['button_url']) : '',
         ));
     }
