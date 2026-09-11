@@ -23,7 +23,7 @@
     },
     {
       "step": "mv",
-      "fromPath": "/wordpress/wp-content/plugins/coqui-events-main",
+      "fromPath": "/wordpress/wp-content/plugins/simple-events-cpt-main",
       "toPath": "/wordpress/wp-content/plugins/coqui-events"
     },
     {
