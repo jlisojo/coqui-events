@@ -34,18 +34,18 @@
       "step": "unzip",
       "zipFile": {
         "resource": "url",
-        "url": "https://github.com/jlisojo/simple-events-pro/archive/refs/heads/main.zip"
+        "url": "https://github.com/jlisojo/coqui-events-pro/archive/refs/heads/main.zip"
       },
       "extractToPath": "/wordpress/wp-content/plugins"
     },
     {
       "step": "mv",
-      "fromPath": "/wordpress/wp-content/plugins/simple-events-pro-main",
-      "toPath": "/wordpress/wp-content/plugins/simple-events-pro"
+      "fromPath": "/wordpress/wp-content/plugins/coqui-events-pro-main",
+      "toPath": "/wordpress/wp-content/plugins/coqui-events-pro"
     },
     {
       "step": "activatePlugin",
-      "pluginPath": "simple-events-pro/simple-events-pro.php"
+      "pluginPath": "coqui-events-pro/coqui-events-pro.php"
     }
   ]
 }
