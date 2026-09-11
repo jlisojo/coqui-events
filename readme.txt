@@ -1,6 +1,6 @@
 === Coqui Events ===
 Contributors: jlisojo
-Donate link: https://github.com/jlisojo/simple-events-cpt
+Donate link: https://github.com/jlisojo/coqui-events
 Tags: events, calendar, custom-post-type, cpt, event-management
 Requires at least: 6.0
 Requires PHP: 7.4
@@ -144,7 +144,7 @@ First release. No upgrades from previous versions.
 == Support ==
 
 For support, feature requests, or bug reports, visit the GitHub repository:
-https://github.com/jlisojo/simple-events-cpt
+https://github.com/jlisojo/coqui-events
 
 == License ==
 

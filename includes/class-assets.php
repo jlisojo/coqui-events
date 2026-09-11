@@ -20,14 +20,14 @@ class Simple_Events_Assets {
      */
     public function register_frontend() {
         wp_register_style(
-            'simple-events-cpt',
+            'coqui-events',
             SIMPLE_EVENTS_PLUGIN_URL . 'assets/css/frontend.css',
             array(),
             SIMPLE_EVENTS_VERSION
         );
 
         wp_register_script(
-            'simple-events-cpt',
+            'coqui-events',
             SIMPLE_EVENTS_PLUGIN_URL . 'assets/js/frontend.js',
             array(),
             SIMPLE_EVENTS_VERSION,
@@ -59,8 +59,8 @@ class Simple_Events_Assets {
      * Public enqueue used by the shortcode when it renders outside the main content check.
      */
     public function enqueue() {
-        wp_enqueue_style('simple-events-cpt');
-        wp_enqueue_script('simple-events-cpt');
+        wp_enqueue_style('coqui-events');
+        wp_enqueue_script('coqui-events');
     }
 
     /**

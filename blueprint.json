@@ -17,18 +17,18 @@
       "step": "unzip",
       "zipFile": {
         "resource": "url",
-        "url": "https://github.com/jlisojo/simple-events-cpt/archive/refs/heads/main.zip"
+        "url": "https://github.com/jlisojo/coqui-events/archive/refs/heads/main.zip"
       },
       "extractToPath": "/wordpress/wp-content/plugins"
     },
     {
       "step": "mv",
-      "fromPath": "/wordpress/wp-content/plugins/simple-events-cpt-main",
-      "toPath": "/wordpress/wp-content/plugins/simple-events-cpt"
+      "fromPath": "/wordpress/wp-content/plugins/coqui-events-main",
+      "toPath": "/wordpress/wp-content/plugins/coqui-events"
     },
     {
       "step": "activatePlugin",
-      "pluginPath": "simple-events-cpt/coqui-events.php"
+      "pluginPath": "coqui-events/coqui-events.php"
     },
     {
       "step": "unzip",

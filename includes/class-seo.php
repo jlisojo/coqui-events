@@ -146,7 +146,7 @@ class Simple_Events_SEO {
         if ($event['location'] || $event['address']) {
             $schema['location'] = array(
                 '@type'   => 'Place',
-                'name'    => $event['location'] ? $event['location'] : __('Event Venue', 'simple-events-cpt'),
+                'name'    => $event['location'] ? $event['location'] : __('Event Venue', 'coqui-events'),
                 'address' => array(
                     '@type'           => 'PostalAddress',
                     'streetAddress'   => $event['address'],
@@ -210,10 +210,10 @@ class Simple_Events_SEO {
         return array(
             '@context'        => 'https://schema.org',
             '@type'           => 'ItemList',
-            'name'            => __('Upcoming Events', 'simple-events-cpt'),
+            'name'            => __('Upcoming Events', 'coqui-events'),
             'description'     => sprintf(
                 /* translators: %s: site name */
-                __('Upcoming events from %s', 'simple-events-cpt'),
+                __('Upcoming events from %s', 'coqui-events'),
                 get_bloginfo('name')
             ),
             'url'             => Simple_Events_Helpers::archive_url(),

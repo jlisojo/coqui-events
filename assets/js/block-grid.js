@@ -14,11 +14,11 @@
     var ServerSideRender = serverSideRender;
 
     registerBlockType('coqui-events/event-grid', {
-        title: __('Event Grid', 'simple-events-cpt'),
-        description: __('Display upcoming events in a responsive grid layout.', 'simple-events-cpt'),
+        title: __('Event Grid', 'coqui-events'),
+        description: __('Display upcoming events in a responsive grid layout.', 'coqui-events'),
         icon: 'calendar-alt',
         category: 'widgets',
-        keywords: [__('events', 'simple-events-cpt'), __('calendar', 'simple-events-cpt'), __('grid', 'simple-events-cpt')],
+        keywords: [__('events', 'coqui-events'), __('calendar', 'coqui-events'), __('grid', 'coqui-events')],
         attributes: {
             count: {
                 type: 'number',
@@ -34,7 +34,7 @@
             },
             button_text: {
                 type: 'string',
-                default: __('View All Events', 'simple-events-cpt')
+                default: __('View All Events', 'coqui-events')
             },
             button_url: {
                 type: 'string',
@@ -47,16 +47,16 @@
 
             return [
                 el(InspectorControls, { key: 'inspector' },
-                    el(PanelBody, { title: __('Event Grid Settings', 'simple-events-cpt'), initialOpen: true },
+                    el(PanelBody, { title: __('Event Grid Settings', 'coqui-events'), initialOpen: true },
                         el(TextControl, {
-                            label: __('Grid Title', 'simple-events-cpt'),
+                            label: __('Grid Title', 'coqui-events'),
                             value: attributes.title,
                             onChange: function (value) {
                                 setAttributes({ title: value });
                             }
                         }),
                         el(RangeControl, {
-                            label: __('Number of Events', 'simple-events-cpt'),
+                            label: __('Number of Events', 'coqui-events'),
                             value: attributes.count,
                             onChange: function (value) {
                                 setAttributes({ count: value });
@@ -65,23 +65,23 @@
                             max: 12
                         }),
                         el(ToggleControl, {
-                            label: __('Show "View All" Button', 'simple-events-cpt'),
+                            label: __('Show "View All" Button', 'coqui-events'),
                             checked: attributes.show_button,
                             onChange: function (value) {
                                 setAttributes({ show_button: value });
                             }
                         }),
                         attributes.show_button && el(TextControl, {
-                            label: __('Button Text', 'simple-events-cpt'),
+                            label: __('Button Text', 'coqui-events'),
                             value: attributes.button_text,
                             onChange: function (value) {
                                 setAttributes({ button_text: value });
                             }
                         }),
                         attributes.show_button && el(TextControl, {
-                            label: __('Button Custom URL (optional)', 'simple-events-cpt'),
+                            label: __('Button Custom URL (optional)', 'coqui-events'),
                             value: attributes.button_url,
-                            placeholder: __('Leave empty for default archive URL', 'simple-events-cpt'),
+                            placeholder: __('Leave empty for default archive URL', 'coqui-events'),
                             onChange: function (value) {
                                 setAttributes({ button_url: value });
                             }
