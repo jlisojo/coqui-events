@@ -61,7 +61,7 @@ if ($se_is_past) {
 
     <div class="se-card__actions">
         <a class="se-button se-button--secondary" href="<?php echo esc_url(get_permalink($post_id)); ?>">
-            <?php echo $se_is_past ? esc_html__('View Details', 'coqui-events') : esc_html__('Learn More', 'coqui-events'); ?>
+            <?php echo esc_html($se_is_past ? __('View Details', 'coqui-events') : __('Learn More', 'coqui-events')); ?>
         </a>
         <?php if ($se_show_register && !$se_is_past && !empty($se_event['registration_link'])) : ?>
             <a class="se-button se-button--primary" href="<?php echo esc_url($se_event['registration_link']); ?>" target="_blank" rel="noopener noreferrer">
