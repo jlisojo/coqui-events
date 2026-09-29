@@ -9,11 +9,11 @@ Stable tag: 1.0.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight WordPress events plugin with custom post types, recurring events via Pro add-on, theme-overridable templates, and Schema.org markup.
+A lightweight WordPress events plugin for managing events, event listings, and event details with a custom post type, Gutenberg block, theme-overridable templates, and Schema.org markup.
 
 == Description ==
 
-Coqui Events is a flexible, self-contained events management plugin for WordPress. It registers an `se_event` custom post type with comprehensive event metadata, native archive templates, and a shortcode for event listings.
+Coqui Events is a lightweight WordPress events and calendar plugin for organizations, venues, schools, nonprofits, and businesses. It registers an `se_event` custom post type with event dates, venues, pricing, contact details, native archive templates, a Gutenberg Event Grid block, and a shortcode for event listings.
 
 **Features:**
 
@@ -29,7 +29,7 @@ Coqui Events is a flexible, self-contained events management plugin for WordPres
 - **Optional CPTP Compatibility** for Custom Post Type Permalinks
 - **Lightweight** – no page builders, ticketing vendors, or external dependencies required
 
-**Simple Events Pro** (separate add-on) adds:
+**Coqui Events Pro** (separate add-on) adds:
 - Recurring events (daily, weekly, monthly)
 - Occurrence exceptions (skip or reschedule individual dates)
 - Calendar month view with navigation
@@ -104,7 +104,7 @@ Yes. The "Registration / ticket URL" field lets you link to any ticketing system
 
 **What about recurring events?**
 
-Recurring events are handled by the **Simple Events Pro** add-on, available on GitHub. The free plugin supports individual event dates.
+Recurring events are handled by the **Coqui Events Pro** add-on, available separately. The free plugin supports individual event dates.
 
 **Can I customize the event display?**
 
@@ -125,7 +125,7 @@ Yes. Events are registered with REST support, so you can query them programmatic
 == Changelog ==
 
 = 1.0.2 =
-* Initial release
+* Initial public release of Coqui Events
 * Events custom post type with categories and tags
 * Meta boxes for event details (date, time, location, pricing, contact)
 * Admin columns showing date, location, price, and status
@@ -139,7 +139,7 @@ Yes. Events are registered with REST support, so you can query them programmatic
 == Upgrade Notice ==
 
 = 1.0.2 =
-First release. No upgrades from previous versions.
+Initial public release of the WordPress events plugin.
 
 == Support ==
 
